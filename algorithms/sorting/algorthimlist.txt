@@ -1,0 +1,26 @@
+bubble
+insertion
+selection
+merge
+quick
+radix
+heap
+shell bucket
+tim
+intro
+counting
+cocktail shaker
+comb
+cycle
+gnome
+pancake
+tree
+bitonic
+pigeonhole
+odd-even
+flash
+patience
+stooge
+sleep
+bogosort
+
