@@ -1,14 +1,15 @@
 #include <stdio.h>
 
 
-int fibonacciNumbers(int a);
+int* fibonacciNumbers(int a);
 int recursivefib(int a, int b, int f);
 
 void fibloopexample(int i);
 void fibrecursionexample(int prev1, int prev2);
 int findnth(int n);
 int main(){
- //fibonacciNumbers(12);
+ //int* fib = fibonacciNumbers(12);
+ //free(fib);
  //recursivefib(0, 1, 5);
  //fibloopexample(10);
  fibrecursionexample(1, 0);
@@ -26,20 +27,23 @@ int recursivefib(int a, int b, int f){
  if(f - 2 > c){recursivefib(fib1, fib2, f);}else{printf("%d",fib2);return fib2;}
 }
 
-int fibonacciNumbers(int a){
- int fn[a];
- int i;
- for(i = 0; i < a-1; i++){
-  if(i == 0){fn[i] = 0;} else if(i == 1){fn[i] = 1;}
-  else{
-   fn[i] = fn[i-1] + fn[i-2];
-  }
- }
- int j;
- for(j=0; j<a-1;j++){
-  printf("%d, ", fn[j]);
- }
- return 0;
+int* fibonacciNumbers(int a){
+	if(a<=0)return NULL;
+
+	int* fn = malloc(a * sizeof(int));
+	if(fn == NULL) return NULL;
+
+	for(int i = 0; i < a; i++){
+ 		if(i == 0){fn[i] = 0;}
+		else if(i == 1){fn[i] = 1;}
+ 		else{
+			fn[i] = fn[i-1] + fn[i-2];
+ 		}
+	}
+	for(int j=0; j<a-1;j++){
+		printf("%d, ", fn[j]);
+	}
+	return fn;
 }
 
 void fibloopexample(int i){
