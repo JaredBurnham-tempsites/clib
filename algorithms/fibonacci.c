@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 
 int* fibonacciNumbers(int a);
 int recursivefib(int a, int b, int f);
@@ -64,7 +64,7 @@ void fibrecursionexample(int prev1, int prev2){
  int newfibo;
  static int count = 0;
 
- if(count <= 19){
+ if(count <= 30){
   newfibo = prev1 + prev2;
   printf("%d\n", newfibo);
   prev2 = prev1;
