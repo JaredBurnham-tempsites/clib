@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 int* twoSum(int* nums, int numsSize, int target, int* returnSize) {
     *returnSize = 2;
     int* results = malloc(2 * sizeof(int));
